@@ -1,0 +1,47 @@
+<div class="table-responsive">
+  <table class="table text-center mt-5">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <!-- <th scope="col">Telefono</th> -->
+          <!-- <th scope="col">Mac</th> -->
+          <th scope="col">IP</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% devices.forEach(function(device){ %>
+          <tr>
+            <th scope="row">
+              <% if (device.typeDevice === 'phone') { %>
+                <img src="https://img.icons8.com/ios-filled/30/000000/phone.png"/>
+              <% } %>
+              <% if (device.typeDevice === 'server') { %>
+                <img src="https://img.icons8.com/dotty/30/000000/server.png"/>
+              <% } %>
+              <% if (device.typeDevice === 'laptop') { %>
+                <img src="https://img.icons8.com/glyph-neue/30/000000/laptop.png"/>
+              <% } %>
+            </th>
+            <td> <%= device.name %> </td>
+            <!-- <td> <%= device.phone %> </td> -->
+            <!-- <td> <%= device.macAddress %> </td> -->
+            <td> <%= device.ipAssigned %> </td>
+            <td>
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Acciones
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="see/<%= device._id %>">Ver</a>
+                  <a class="dropdown-item" href="edit/<%= device._id %>">Editar</a>
+                  <a class="dropdown-item" href="deleteDevice/<%= device._id %>">Eliminar</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+</div>

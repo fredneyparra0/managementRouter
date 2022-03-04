@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Crear Dispositivo</title>
+</head>
+<body>
+    
+    <%- include('./components/navbar') %>
+
+    <div class="container">
+        <form method="post"  id="formCreateNewDevice" action="/createNewDevice" class="mt-5">
+            <div class="mb-3">
+                <label for="nameInput" class="form-label">Nombre</label>
+                <input autocomplete="off" name="name" type="text" class="form-control" id="nameInput" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="phoneInput" class="form-label">Nombre del dispositivo</label>
+                <input autocomplete="off" name="phone" type="text" class="form-control" id="phoneInput">
+            </div>
+            <div class="mb-3">
+                <label for="macInput" class="form-label">Direccion Mac</label>
+                <input autocomplete="off" name="macAddress" type="text" class="form-control" id="macInput">
+            </div>
+            <div class="mb-3">
+                <label for="ipInput" class="form-label">ip Asignada</label>
+                <input autocomplete="off" name="ipAssigned" type="number" class="form-control" id="ipInput">
+            </div>
+            <div class="mb-3">
+                <label for="typeDeviceInput" class="form-label">Tipo de dispositivo</label>
+                <select id="typeDeviceInput" name="typeDevice" class="form-select" aria-label="typeDevice">
+                    <option selected>Seleccionar...</option>
+                    <option value="phone">Telefono</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="server">Server</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Crear</button>
+        </form>
+    </div>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

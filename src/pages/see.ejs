@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Ver Dispositivo</title>
+</head>
+<body>
+    
+    <%- include('./components/navbar') %>
+
+    <div class="mt-5 d-flex justify-content-center">
+        <div class="card row container text-center">
+            <div class="mb-4">
+                <span class="fs-4 fw-bold">Nombre Persona</span>
+                <div class="fs-5">
+                    <%= device.name %> 
+                </div>
+            </div>
+            <div class="mb-4">
+                <span class="fs-4 fw-bold">Nombre Dispositivo</span>
+                <div class="fs-5">
+                    <%= device.phone %>
+                </div>
+            </div>
+            <div class="mb-4">
+                <span class="fs-4 fw-bold">Direccion MAC</span>
+                <div class="fs-5">
+                    <%= device.macAddress %>
+                </div>
+            </div>
+            <div class="mb-4">
+                <span class="fs-4 fw-bold">IP Asignada</span>
+                <div class="fs-5">
+                    <%= device.ipAssigned %>
+                </div>
+            </div>
+            <div class="mb-4">
+                <span class="fs-4 fw-bold">Tipo de dispositivo</span>
+                <div>
+                    <% if (device.typeDevice === 'phone') { %>
+                        <img src="https://img.icons8.com/ios-filled/60/000000/phone.png"/>
+                      <% } %>
+                      <% if (device.typeDevice === 'server') { %>
+                        <img src="https://img.icons8.com/dotty/60/000000/server.png"/>
+                      <% } %>
+                      <% if (device.typeDevice === 'laptop') { %>
+                        <img src="https://img.icons8.com/glyph-neue/60/000000/laptop.png"/>
+                      <% } %>
+                </div>
+            </div>
+            <div class="mt-2 mb-4">
+                <a class="btn btn-success w-100" href="/">Regresar</a>
+            </div>
+        </div>
+    </div>
+
+
+     <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
